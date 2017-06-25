@@ -2,15 +2,20 @@
 
 namespace input;
 
-use serviceProvider;
+use input;
+use foundation\serviceProvider;
 
 class inputServiceProvider extends serviceProvider
 {
 	public function register ( )
 	{
-		$this->app->share ( 'input', function ( )
+		$input = new collection;
+
+		$this->app->share ( 'input', function ( ) use ( $input )
 		{
-			return new collection;
+			return $input;
 		} );
+
+		input::instance ( $input );
 	}
 }
