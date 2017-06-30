@@ -47,6 +47,11 @@ class collection
 		return $this->bindings->bind ( $key, $this );
 	}
 
+	public function bound ( string $key ) : bool
+	{
+		return $this->bindings->has ( $key );
+	}
+
 	public function composition ( $key, closure $binding )
 	{
 		$this->compositions->composition ( $key, $binding );
