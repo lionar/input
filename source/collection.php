@@ -42,9 +42,9 @@ class collection
 		$this->bindings->binding ( $key, $binding );
 	}
 
-	public function bind ( string $key )
+	public function bind ( string $key, array $payload = [ ] )
 	{
-		return $this->bindings->bind ( $key, $this );
+		return $this->bindings->bind ( $key, $this, $payload );
 	}
 
 	public function bound ( string $key ) : bool

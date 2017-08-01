@@ -15,11 +15,11 @@ class bindings
 		return ( isset ( $this->collection [ $key ] ) );
 	}
 
-	public function bind ( string $key, collection $input )
+	public function bind ( string $key, collection $input, array $payload = [ ] )
 	{
 		if ( ! $this->has ( $key ) )
 			throw new inexistentBindingException ( $key );
-		return $this->collection [ $key ] ( $input );
+		return $this->collection [ $key ] ( $input, $payload );
 	}
 
 	public function binding ( string $key, closure $binding )
