@@ -7,7 +7,7 @@ use input\exceptions\bindingExistentException;
 use input\exceptions\compositionExistentException;
 use InvalidArgumentException as invalidArgumentException;
 
-class collection
+class collection implements \agreed\input
 {	
 	private $collection = [ ];
 	private $bindings = null;
